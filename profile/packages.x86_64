@@ -1,0 +1,46 @@
+# Packages installed into the live ISO / final system.
+# This starts from the releng base package list (installer tools, drivers,
+# etc.) and adds a Hyprland desktop on top. Edit freely — this is the
+# easiest lever for "making it yours."
+#
+# NOTE: this file is layered on top of releng's own packages.x86_64 by
+# build.sh copying over it — merge in the releng list if you want to keep
+# every driver/tool it ships. For a minimal personal ISO, the essentials
+# below are enough to get a working desktop; add hardware drivers
+# (nvidia, broadcom-wl, etc.) as you need them.
+
+# --- Base system ---
+base
+base-devel
+linux
+linux-firmware
+networkmanager
+sudo
+git
+vim
+
+# --- Desktop: Hyprland + essentials ---
+hyprland
+xdg-desktop-portal-hyprland
+kitty              # terminal
+waybar             # status bar
+wofi               # app launcher
+mako               # notifications
+grim               # screenshots
+slurp
+polkit-gnome
+qt5-wayland
+qt6-wayland
+
+# --- Login manager ---
+sddm
+
+# --- Audio ---
+pipewire
+pipewire-pulse
+pipewire-alsa
+wireplumber
+
+# --- Fonts (Hyprland/waybar need a Nerd Font for icons) ---
+ttf-jetbrains-mono-nerd
+noto-fonts
