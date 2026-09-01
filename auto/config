@@ -1,0 +1,16 @@
+#!/bin/sh
+# live-build configuration. This is what `lb config` reads to set up the
+# build (Debian release, architecture, package sources, etc).
+# Full option reference: `man live-build-config` or the Debian Live manual.
+set -e
+
+lb config noauto \
+    --architecture amd64 \
+    --distribution trixie \
+    --archive-areas "main contrib non-free non-free-firmware" \
+    --debian-installer live \
+    --debian-installer-gui true \
+    --iso-application "MyDistro" \
+    --iso-volume "MYDISTRO" \
+    --iso-publisher "Your Name <https://github.com/yourusername>" \
+    "${@}"

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Boots the most recently built ISO in QEMU for quick testing.
+# Boots the built ISO in QEMU for quick testing.
 set -euo pipefail
 
-ISO="$(find out -maxdepth 1 -name '*.iso' | sort | tail -n1)"
+ISO="$(find . -maxdepth 1 -name '*.hybrid.iso' | sort | tail -n1)"
 
 if [ -z "${ISO:-}" ]; then
-    echo "No ISO found in out/. Run ./build.sh first."
+    echo "No ISO found. Run ./build.sh first."
     exit 1
 fi
 

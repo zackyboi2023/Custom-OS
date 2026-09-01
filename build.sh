@@ -1,22 +1,17 @@
 #!/usr/bin/env bash
-# Builds the ISO. Must be run on Arch Linux (archiso is an Arch-only tool),
-# and needs root (mkarchiso creates loopback/squashfs images).
+# Builds the ISO. Must be run on Debian (or a Debian-family distro) with
+# live-build installed, and needs root.
 set -euo pipefail
 
-if ! command -v mkarchiso &>/dev/null; then
-    echo "mkarchiso not found. Install it with: sudo pacman -S archiso"
+if ! command -v lb &>/dev/null; then
+    echo "live-build not found. Install it with: sudo apt install live-build"
     exit 1
 fi
 
-WORKDIR="$(mktemp -d)"
-OUTDIR="$(pwd)/out"
-RELENG="/usr/share/archiso/configs/releng"
+echo "==> Configuring build (auto/config)"
+lb config
 
-echo "==> Staging profile in $WORKDIR"
-cp -r "$RELENG"/. "$WORKDIR/"
-cp -rf ./profile/. "$WORKDIR/"
+echo "==> Building ISO (this can take 20-40 minutes the first time)"
+lb build
 
-echo "==> Building ISO (this can take 10-30 minutes the first time)"
-mkarchiso -v -w "$WORKDIR/work" -o "$OUTDIR" "$WORKDIR"
-
-echo "==> Done. ISO is in $OUTDIR"
+echo "==> Done. Look for live-image-amd64.hybrid.iso in this folder."

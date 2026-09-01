@@ -1,0 +1,30 @@
+# Packages installed into the live ISO / final system.
+# live-build merges every *.list.chroot file in this folder, so you can
+# split these into multiple files later (e.g. desktop.list.chroot,
+# extras.list.chroot) if the list grows. Comments (#) and blank lines are
+# ignored.
+
+# --- Base tools ---
+sudo
+git
+vim
+network-manager
+network-manager-gnome
+
+# --- Desktop: XFCE (minimal task, not the full default Debian XFCE set) ---
+xfce4
+xfce4-terminal
+xfce4-panel
+xfce4-session
+xfce4-settings
+thunar
+lightdm
+lightdm-gtk-greeter
+
+# --- Audio ---
+pipewire
+pipewire-pulse
+wireplumber
+
+# --- Fonts ---
+fonts-noto
