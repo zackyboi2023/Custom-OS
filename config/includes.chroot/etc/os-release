@@ -1,8 +1,11 @@
+PRETTY_NAME="MyDistro 0.2.0"
 NAME="MyDistro"
-PRETTY_NAME="MyDistro Linux"
+VERSION="0.2.0"
+VERSION_ID="0.2.0"
 ID=mydistro
 ID_LIKE=debian
 HOME_URL="https://github.com/yourusername/mydistro"
 DOCUMENTATION_URL="https://github.com/yourusername/mydistro"
 SUPPORT_URL="https://github.com/yourusername/mydistro/issues"
 BUG_REPORT_URL="https://github.com/yourusername/mydistro/issues"
+ANSI_COLOR="38;2;23;147;209"

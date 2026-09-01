@@ -1,30 +1,78 @@
 # Packages installed into the live ISO / final system.
-# live-build merges every *.list.chroot file in this folder, so you can
-# split these into multiple files later (e.g. desktop.list.chroot,
-# extras.list.chroot) if the list grows. Comments (#) and blank lines are
-# ignored.
+# live-build merges every *.list.chroot file in this folder.
 
 # --- Base tools ---
 sudo
 git
 vim
-network-manager
-network-manager-gnome
+nano
+htop
+curl
+wget
+ca-certificates
+dbus-user-session
+policykit-1
+policykit-1-gnome
 
-# --- Desktop: XFCE (minimal task, not the full default Debian XFCE set) ---
+# --- Desktop: XFCE ---
 xfce4
 xfce4-terminal
 xfce4-panel
 xfce4-session
 xfce4-settings
+xfce4-power-manager
+xfce4-pulseaudio-plugin
 thunar
+thunar-archive-plugin
+thunar-volman
+gvfs
+gvfs-backends
+gvfs-fuse
 lightdm
 lightdm-gtk-greeter
+xorg
+xserver-xorg-input-all
+xserver-xorg-video-all
 
-# --- Audio ---
+# --- Networking / Wi-Fi ---
+network-manager
+network-manager-gnome
+wpasupplicant
+wireless-tools
+rfkill
+iw
+modemmanager
+usb-modeswitch
+
+# --- Firmware (Wi-Fi, BT, GPU, audio DSP) ---
+firmware-linux
+firmware-linux-nonfree
+firmware-misc-nonfree
+firmware-iwlwifi
+firmware-realtek
+firmware-atheros
+firmware-brcm80211
+firmware-mediatek
+firmware-intel-sound
+bluez
+bluez-firmware
+amd64-microcode
+intel-microcode
+
+# --- Audio (Trixie: PipeWire, not PulseAudio) ---
+pipewire-audio
 pipewire
 pipewire-pulse
 wireplumber
+libspa-0.2-bluetooth
+pavucontrol
+alsa-utils
+alsa-ucm-conf
+
+# --- Browser ---
+firefox-esr
 
 # --- Fonts ---
 fonts-noto
+fonts-liberation
+fonts-noto-core

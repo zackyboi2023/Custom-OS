@@ -8,9 +8,13 @@ lb config noauto \
     --architecture amd64 \
     --distribution trixie \
     --archive-areas "main contrib non-free non-free-firmware" \
+    --firmware-chroot true \
+    --firmware-binary true \
+    --apt-recommends true \
     --debian-installer live \
     --debian-installer-gui true \
     --iso-application "MyDistro" \
-    --iso-volume "MYDISTRO" \
+    --iso-volume "MYDISTRO_0.2.0" \
     --iso-publisher "Your Name <https://github.com/yourusername>" \
+    --bootappend-live "boot=live components hostname=mydistro username=user timezone=UTC" \
     "${@}"

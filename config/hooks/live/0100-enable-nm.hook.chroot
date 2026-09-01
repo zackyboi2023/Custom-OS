@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+# NetworkManager owns networking. Leave only loopback in ifupdown
+# so the two do not fight over interfaces.
+systemctl enable NetworkManager.service || true
+systemctl disable networking.service || true
+
+if [ -f /etc/network/interfaces ]; then
+    cat >/etc/network/interfaces <<'EOF'
+# Loopback only — NetworkManager manages everything else
+auto lo
+iface lo inet loopback
+EOF
+fi

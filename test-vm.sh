@@ -10,6 +10,8 @@ if [ -z "${ISO:-}" ]; then
 fi
 
 echo "==> Booting $ISO"
+# intel-hda gives you a chance to test PipeWire inside the VM.
+# Wi-Fi firmware still needs real hardware (or a USB dongle passthrough).
 qemu-system-x86_64 \
     -m 4G \
     -smp 2 \
@@ -17,4 +19,6 @@ qemu-system-x86_64 \
     -boot d \
     -cdrom "$ISO" \
     -vga virtio \
-    -display gtk
+    -display gtk \
+    -device intel-hda \
+    -device hda-duplex
