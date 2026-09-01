@@ -1,7 +1,5 @@
 # MyDistro
 
-*(rename this — see "Make it yours" below)*
-
 A personal Linux distribution built on Arch Linux, with a custom-branded live
 ISO, a themed Hyprland desktop, and my own default configuration. Built and
 tested entirely in a VM.
@@ -52,8 +50,7 @@ Everything you'd actually want to change lives in `profile/`:
 | Terminal theme | `profile/airootfs/etc/skel/.config/kitty/kitty.conf` |
 | Wallpaper | `profile/airootfs/usr/share/backgrounds/` |
 
-Start by renaming the distro (search this repo for `MyDistro` / `mydistro`
-and replace with your own name), swap the wallpaper, and tweak
+Start by renaming the distro, swap the wallpaper, and tweak
 `hyprland.conf`'s colors and keybinds. Rebuild and re-test after every change
 — small, frequent iterations are much less painful than big ones.
 
